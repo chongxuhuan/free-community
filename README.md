@@ -3,11 +3,15 @@
 
 
 后端技术:spring + hibernate + springJdbcTemplate + spring mvc + jsp + cache
+
+
 前端技术:js + html5 + div + css
 
 数据库:mysql
 
+
 项目管理:maven
+
 代码管理:git
 
 
