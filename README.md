@@ -31,6 +31,8 @@
 
 7.http://localhost:8080
 
+最好大家在自己的电脑配置hosts 模拟下域名:www.itfree.com
+
 登录后台 url http://localhost:8080/jeeadmin/jeecms/index.do
 
 帐号:admin
