@@ -18,14 +18,22 @@
 
 ###########################################系统部署####################################################
 1.首先eclipse安装git插件和maven插件
+
 2.用eclipse git 插件下载free-community,然后再把项目导入到eclipse中
+
 3.把free-community依赖到maven
+
 4.右击free-community ---->> run --->> maven package
+
 5.打包完后,部署到tomcat中
+
 6.启动服务器
+
 7.http://localhost:8080
 
 登录后台 url http://localhost:8080/jeeadmin/jeecms/index.do
+
 帐号:admin
+
 密码:password
 
