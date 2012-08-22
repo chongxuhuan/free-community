@@ -33,9 +33,56 @@
 		<property name="dataSource" ref="dataSource"/>	
 		<property name="mappingLocations">
 			<list>
-				<value>classpath*:/com/jeecms/core/entity/hbm/*.hbm.xml</value>
-				<value>classpath*:/com/jeecms/cms/entity/main/hbm/*.hbm.xml</value>
-				<value>classpath*:/com/jeecms/cms/entity/assist/hbm/*.hbm.xml</value>
+				<value>classpath:com/jeecms/core/entity/hbm/Authentication.hbm.xml</value>
+				<value>classpath:com/jeecms/core/entity/hbm/Config.hbm.xml</value>
+				<value>classpath:com/jeecms/core/entity/hbm/DbFile.hbm.xml</value>
+				<value>classpath:com/jeecms/core/entity/hbm/DbTpl.hbm.xml</value>
+				<value>classpath:com/jeecms/core/entity/hbm/Ftp.hbm.xml</value>
+				<value>classpath:com/jeecms/core/entity/hbm/UnifiedUser.hbm.xml</value>
+				
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsAcquisition.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsAcquisitionHistory.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsAcquisitionTemp.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsAdvertising.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsAdvertisingSpace.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsComment.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsCommentExt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsFriendlink.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsFriendlinkCtg.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsGuestbook.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsGuestbookCtg.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsGuestbookExt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsKeyword.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsMessage.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsReceiverMessage.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsSensitivity.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsSiteFlow.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsVoteItem.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsVoteRecord.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/assist/hbm/CmsVoteTopic.hbm.xml</value>
+				
+				<value>classpath:com/jeecms/cms/entity/main/hbm/Channel.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ChannelExt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ChannelTxt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsConfig.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsGroup.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsLog.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsModel.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsModelItem.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsRole.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsSite.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsSiteModel.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsTopic.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsUser.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsUserExt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/CmsUserSite.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/Content.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ContentCheck.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ContentCount.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ContentExt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ContentTag.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ContentTxt.hbm.xml</value>
+				<value>classpath:com/jeecms/cms/entity/main/hbm/ContentType.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
