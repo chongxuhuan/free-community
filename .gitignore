@@ -11,4 +11,5 @@ lib/
 .classpath
 
 target
-.data
+
+/cache/
