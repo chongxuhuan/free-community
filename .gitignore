@@ -13,4 +13,4 @@ lib/
 target
 
 *.data
-/hibernate/cache
+/hibernate/cache/
