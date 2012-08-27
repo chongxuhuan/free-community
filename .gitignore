@@ -11,6 +11,4 @@ lib/
 .classpath
 
 target
-
-*.data
-/hibernate/cache/
+cache/**.data
