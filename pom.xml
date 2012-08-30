@@ -5,9 +5,9 @@
 	<artifactId>free-community</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<properties> 
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -36,6 +36,11 @@
 						</configuration>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
 			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -74,7 +79,7 @@
 				<targetPath>${basedir}/src/main/webapp/WEB-INF/classes/com/jeecms/core/entity/hbm</targetPath>
 			</resource>
 		</resources>
-		<finalName>hk_ssoweb</finalName>
+		<finalName>free-community</finalName>
 		<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 	</build>
 	<dependencies>
