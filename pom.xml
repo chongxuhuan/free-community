@@ -3,11 +3,26 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>free-community</groupId>
 	<artifactId>free-community</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<package.environment>dev</package.environment>
 	</properties>
+	<profiles>
+		<profile>
+			<id>product</id>
+			<properties>
+				<package.environment>product</package.environment>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<package.environment>test</package.environment>
+			</properties>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
@@ -53,19 +68,24 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/src/main/resources</directory>
-									<filtering>true</filtering>
+									<directory>src/main/resources/config.${package.environment}</directory>
 								</resource>
 							</resources>
+							<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes/config</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 		<resources>
+			<resource>
+                <directory>src/main/resources/</directory>
+                <excludes>
+                    <exclude>**/config.*/**</exclude>
+                </excludes>
+            </resource>
 			<resource>
 				<directory>src/main/java/com/jeecms/cms/entity/assist/hbm</directory>
 				<targetPath>${basedir}/src/main/webapp/WEB-INF/classes/com/jeecms/cms/entity/assist/hbm</targetPath>
@@ -79,7 +99,7 @@
 				<targetPath>${basedir}/src/main/webapp/WEB-INF/classes/com/jeecms/core/entity/hbm</targetPath>
 			</resource>
 		</resources>
-		<finalName>free-community</finalName>
+		<finalName>${artifactId}-${project.version}-${package.environment}</finalName>
 		<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 	</build>
 	<dependencies>
