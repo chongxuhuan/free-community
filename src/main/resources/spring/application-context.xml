@@ -12,6 +12,7 @@
 		<property name="locations">
 			<list>
 				<value>classpath:config/jdbc.properties</value>
+				<value>classpath:config/project.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -87,12 +88,12 @@
 		</property>
 		<property name="hibernateProperties">
 			<value>
-			hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
-			hibernate.show_sql=true
-			hibernate.format_sql=false
-			hibernate.query.substitutions=true 1, false 0
-			hibernate.jdbc.batch_size=20
-			hibernate.cache.use_query_cache=true
+			hibernate.dialect=${hibernate.dialect}
+			hibernate.show_sql=${hibernate.show_sql}
+			hibernate.format_sql=${hibernate.format_sql}
+			hibernate.query.substitutions=${hibernate.query.substitutions}
+			hibernate.jdbc.batch_size=${hibernate.jdbc.batch_size}
+			hibernate.cache.use_query_cache=${hibernate.cache.use_query_cache}
 			</value>
 		</property>
 		<property name="entityInterceptor">   

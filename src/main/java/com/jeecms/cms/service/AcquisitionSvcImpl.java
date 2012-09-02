@@ -5,6 +5,8 @@ import java.net.URI;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpEntity;
@@ -221,7 +223,8 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 					return handerResult(temp, history, title,
 							AcquisitionResultType.CONTENTENDNOTFOUND);
 				}
-				String txt = html.substring(start, end);
+				//把标签里的属性都去除了
+				String txt = cleanHtmlTagAtt(html.substring(start, end));
 				Content content = cmsAcquisitionMng.saveContent(title, txt,
 						acquId, AcquisitionResultType.SUCCESS, temp, history);
 				cmsAcquisitionTempMng.save(temp);
@@ -267,6 +270,21 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 				percent.length() - 1)));
 		temp.setSite(site);
 		return temp;
+	}
+	/**
+	 * 去除标签内的属性-->>例如<div class=... id=...> -->> <div>
+	 * @param html
+	 * @return
+	 */
+	private String cleanHtmlTagAtt(String html){
+		if(html != null && html != ""){
+			String regEx = "(class|id|style|on)[^>]*?[>]";//class | id | style | on 都去除
+	        Pattern pattern = Pattern.compile(regEx,Pattern.CASE_INSENSITIVE); 
+	        Matcher matcher = pattern.matcher(html); 
+	        html = matcher.replaceAll(">");
+	        return html;
+		}
+		return "";
 	}
 
 	private CmsAcquisitionHistory newHistory(String channelUrl,
