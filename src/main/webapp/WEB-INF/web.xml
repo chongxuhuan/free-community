@@ -7,8 +7,8 @@
 			classpath:spring/application-context.xml
 			classpath:spring/cache-context.xml
 			classpath:spring/captcha-context.xml
-			classpath:spring/jeecore-context.xml
-			classpath:spring/jeecms-context.xml
+			classpath:spring/free-community-core-context.xml
+			classpath:spring/free-community-context.xml
 		</param-value>
 	</context-param>
 	<filter>
@@ -92,7 +92,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/jeecms-servlet-admin.xml</param-value>
+			<param-value>classpath:spring/free-community-servlet-admin.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -101,7 +101,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/jeecms-servlet-front.xml</param-value>
+			<param-value>classpath:spring/free-community-servlet-front.xml</param-value>
 		</init-param>
 		<load-on-startup>2</load-on-startup>
 	</servlet>
