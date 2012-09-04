@@ -1,14 +1,9 @@
-classes
-/
+classes/
 lib/
-
 .git/
-
 .settings/
-
 .project
-
 .classpath
-
 target
 cache/**.data
+webapp/index.html
