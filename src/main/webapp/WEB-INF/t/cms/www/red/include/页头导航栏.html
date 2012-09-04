@@ -28,9 +28,9 @@
 	<div style="width: 980px; margin: 0 auto;">
     <ul class="menu">
     	[@cms_channel_list]
-        <li [#if !channel??]class="current"[/#if]><a href="${base}/" class="parent" target="_self"><span>首&nbsp;页</span></a></li>
+        <li [#if !channel??]class="current"[/#if]><a href="${base}/" class="parent" target="_self"><span>&nbsp;&nbsp;首&nbsp;页&nbsp;&nbsp;</span></a></li>
         [#list tag_list as c]
-        <li [#if channel??&&channel.id==c.id] class="current" [/#if]><a href="${c.url}" target="_self" class="parent"><span>&nbsp;${c.name}&nbsp;</span></a></li>
+        <li [#if channel??&&channel.id==c.id] class="current" [/#if]><a href="${c.url}" target="_self" class="parent"><span>&nbsp;&nbsp;${c.name}&nbsp;&nbsp;</span></a></li>
         [/#list]
         [/@cms_channel_list]
         <li><a href="/guestbook.jspx" class="parent"><span>留言版</span></a></li>
