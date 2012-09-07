@@ -33,6 +33,7 @@ import com.jeecms.cms.entity.main.Content;
 import com.jeecms.cms.manager.assist.CmsAcquisitionHistoryMng;
 import com.jeecms.cms.manager.assist.CmsAcquisitionMng;
 import com.jeecms.cms.manager.assist.CmsAcquisitionTempMng;
+import com.jeecms.common.util.HtmlTagUtils;
 
 @Service
 public class AcquisitionSvcImpl implements AcquisitionSvc {
@@ -224,7 +225,7 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 							AcquisitionResultType.CONTENTENDNOTFOUND);
 				}
 				//把标签里的属性都去除了
-				String txt = cleanHtmlTagAtt(html.substring(start, end));
+				String txt = HtmlTagUtils.clearHtmlTagAtt(html.substring(start, end));
 				Content content = cmsAcquisitionMng.saveContent(title, txt,
 						acquId, AcquisitionResultType.SUCCESS, temp, history);
 				cmsAcquisitionTempMng.save(temp);
@@ -270,21 +271,6 @@ public class AcquisitionSvcImpl implements AcquisitionSvc {
 				percent.length() - 1)));
 		temp.setSite(site);
 		return temp;
-	}
-	/**
-	 * 去除标签内的属性-->>例如<div class=... id=...> -->> <div>
-	 * @param html
-	 * @return
-	 */
-	private String cleanHtmlTagAtt(String html){
-		if(html != null && html != ""){
-			String regEx = "(class|id|style|on)[^>]*?[>]";//class | id | style | on 都去除
-	        Pattern pattern = Pattern.compile(regEx,Pattern.CASE_INSENSITIVE); 
-	        Matcher matcher = pattern.matcher(html); 
-	        html = matcher.replaceAll(">");
-	        return html;
-		}
-		return "";
 	}
 
 	private CmsAcquisitionHistory newHistory(String channelUrl,
