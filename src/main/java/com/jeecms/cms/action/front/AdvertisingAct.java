@@ -31,8 +31,8 @@ public class AdvertisingAct {
 	// private static final Logger log = LoggerFactory
 	// .getLogger(AdvertisingAct.class);
 
-	public static final String TPL_AD = "tpl.advertising";
-	public static final String TPL_ADSPACE = "tpl.adspace";
+	public static final String TPL_AD = "advertising";
+	public static final String TPL_ADSPACE = "adspace";
 
 	@RequestMapping(value = "/ad.jspx")
 	public String ad(Integer id, HttpServletRequest request,
@@ -43,8 +43,7 @@ public class AdvertisingAct {
 			model.addAttribute("ad", ad);
 		}
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_CSI, TPL_AD);
+		return FrontUtils.getTplPath(site.getSolutionPath(),TPLDIR_CSI, TPL_AD);
 	}
 
 	@RequestMapping(value = "/adspace.jspx")
@@ -58,8 +57,7 @@ public class AdvertisingAct {
 			model.addAttribute("adList", adList);
 		}
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_CSI, TPL_ADSPACE);
+		return FrontUtils.getTplPath(site.getSolutionPath(),TPLDIR_CSI, TPL_ADSPACE);
 	}
 
 	@RequestMapping(value = "/ad_display.jspx")

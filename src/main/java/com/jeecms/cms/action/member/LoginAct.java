@@ -15,7 +15,7 @@ import com.jeecms.common.web.RequestUtils;
 
 @Controller
 public class LoginAct {
-	public static final String LOGIN_CSI = "tpl.loginCsi";
+	public static final String LOGIN_CSI = "loginCsi";
 
 	/**
 	 * 客户端包含
@@ -30,7 +30,7 @@ public class LoginAct {
 		// 将request中所有参数
 		model.putAll(RequestUtils.getQueryParams(request));
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_CSI, LOGIN_CSI);
 	}
 

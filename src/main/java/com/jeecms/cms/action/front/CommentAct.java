@@ -38,8 +38,8 @@ import com.octo.captcha.service.image.ImageCaptchaService;
 public class CommentAct {
 	private static final Logger log = LoggerFactory.getLogger(CommentAct.class);
 
-	public static final String COMMENT_PAGE = "tpl.commentPage";
-	public static final String COMMENT_LIST = "tpl.commentList";
+	public static final String COMMENT_PAGE = "commentPage";
+	public static final String COMMENT_LIST = "commentList";
 
 	@RequestMapping(value = "/comment*.jspx", method = RequestMethod.GET)
 	public String page(Integer contentId, Integer pageNo,
@@ -59,7 +59,7 @@ public class CommentAct {
 		FrontUtils.frontData(request, model, site);
 		FrontUtils.frontPageData(request, model);
 		model.addAttribute("content", content);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, COMMENT_PAGE);
 	}
 
@@ -95,8 +95,7 @@ public class CommentAct {
 		model.addAttribute("list", list);
 		CmsSite site = CmsUtils.getSite(request);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_CSI, COMMENT_LIST);
+		return FrontUtils.getTplPath(site.getSolutionPath(),TPLDIR_CSI, COMMENT_LIST);
 	}
 
 	@RequestMapping(value = "/comment.jspx", method = RequestMethod.POST)
