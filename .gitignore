@@ -5,5 +5,5 @@ lib/
 .project
 .classpath
 target
-cache/**.data
+*.data
 webapp/index.html
