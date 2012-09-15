@@ -6,4 +6,4 @@ lib/
 .classpath
 target
 *.data
-webapp/index.html
+index.html
