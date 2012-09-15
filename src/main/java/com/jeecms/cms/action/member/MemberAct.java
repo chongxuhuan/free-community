@@ -36,7 +36,7 @@ import com.jeecms.common.web.ResponseUtils;
 public class MemberAct {
 	private static final Logger log = LoggerFactory.getLogger(MemberAct.class);
 
-	public static final String MEMBER_CENTER = "tpl.memberCenter";
+	public static final String MEMBER_CENTER = "memberCenter";
 	public static final String MEMBER_PROFILE = "memberProfile";
 	public static final String MEMBER_PORTRAIT = "memberPortrait";
 	public static final String MEMBER_PASSWORD = "memberPassword";
@@ -65,7 +65,7 @@ public class MemberAct {
 		if (user == null) {
 			return FrontUtils.showLogin(request, model, site);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, MEMBER_CENTER);
 	}
 

@@ -88,7 +88,7 @@ public class ContributeAct {
 		if (queryChannelId != null) {
 			model.addAttribute("queryChannelId", queryChannelId);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, CONTRIBUTE_LIST);
 	}
 
