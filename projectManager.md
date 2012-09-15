@@ -80,18 +80,18 @@ member
 	找回密码输入页.html -->> forgotPasswordInput.html
 	注册结果页.html -->> registerResult.html
 message
-	草稿箱.html -->> drafts.html
-	发件箱.html -->> outBox.html
-	发信页.html -->>  sendMessage.html
-	回复页.html -->> replyMessage.html
-	垃圾箱.html -->> dustbin.html
-	收件箱.html -->> inbox.html
+	草稿箱.html -->> messageDraftLists.html
+	发件箱.html -->> messageSendLists.html
+	发信页.html -->>  messageAdd.html
+	回复页.html -->> messageReply.html
+	垃圾箱.html -->> messageTrashLists.html
+	收件箱.html -->> messageInBoxLists.html
 	信息阅读页.html -->> messageRead.html
-	修改信息页.html -->> modifyMessage.html
-	站内信管理员.html -->> siteAdmin.html
+	修改信息页.html -->> messageEdit.html
+	站内信管理员.html -->> messageMng.html
 special
 	RSS.html
-	标签导航页.html -->> tagNav.html
+	标签导航页.html -->> tagIndex.html
 	标签详细页.html -->> tagDetail.html
 	留言板类别页.html -->> messageBoardCategory.html
 	留言板首页.html -->> messageBoard.html
@@ -111,31 +111,8 @@ tag
 	content_list.html
 	content_page.html
 topic
-	专题导航页.html -->> subjectNav.html
-	专题默认页.html -->> subjectDefault.html
-###############################################################################################################################################################
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-content
-update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/newsContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/新闻内容.html';
-update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/worksContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/作品内容.html';
-update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/downloadContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/下载内容.html';
-update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/photoContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/图库内容.html';
-update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/videoContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/视频内容.html';
-update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/productContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/产品内容.html';
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-channel
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/productColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/产品栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/videoColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/视频栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/videoColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/视频栏目_子栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/photoColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/图库栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/photoColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/图库栏目_子栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/downloadColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/下载栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/downloadColumn_secondColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/下载栏目_二级.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/newsColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/新闻栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/newsColumn_praentColumn.html.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/新闻栏目_父级.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/newsColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/新闻栏目_子栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/worksColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/作品栏目.html';
-update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/worksColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/作品栏目_子栏目.html';
+	专题导航页.html -->> topicIndex.html
+	专题默认页.html -->> topicDefault.html
 
 
 

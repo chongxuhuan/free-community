@@ -35,9 +35,9 @@ public class GuestbookAct {
 	private static final Logger log = LoggerFactory
 			.getLogger(GuestbookAct.class);
 
-	public static final String GUESTBOOK_INDEX = "tpl.guestbookIndex";
-	public static final String GUESTBOOK_CTG = "tpl.guestbookCtg";
-	public static final String GUESTBOOK_DETAIL = "tpl.guestbookDetail";
+	public static final String GUESTBOOK_INDEX = "guestbookIndex";
+	public static final String GUESTBOOK_CTG = "guestbookCtg";
+	public static final String GUESTBOOK_DETAIL = "guestbookDetail";
 
 	/**
 	 * 留言板首页或类别页
@@ -61,12 +61,12 @@ public class GuestbookAct {
 		}
 		if (ctg == null) {
 			// 留言板首页
-			return FrontUtils.getTplPath(request, site.getSolutionPath(),
+			return FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_SPECIAL, GUESTBOOK_INDEX);
 		} else {
 			// 留言板类别页
 			model.addAttribute("ctg", ctg);
-			return FrontUtils.getTplPath(request, site.getSolutionPath(),
+			return FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_SPECIAL, GUESTBOOK_CTG);
 		}
 	}
@@ -81,7 +81,7 @@ public class GuestbookAct {
 		}
 		model.addAttribute("guestbook", guestbook);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, GUESTBOOK_DETAIL);
 
 	}

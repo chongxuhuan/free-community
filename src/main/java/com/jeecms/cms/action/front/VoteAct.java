@@ -37,8 +37,8 @@ public class VoteAct {
 	 */
 	public static final String VOTE_COOKIE_PREFIX = "_vote_cookie_";
 
-	public static final String VOTE_INPUT = "tpl.voteInput";
-	public static final String VOTE_RESULT = "tpl.voteResult";
+	public static final String VOTE_INPUT = "voteInput";
+	public static final String VOTE_RESULT = "voteResult";
 
 	@RequestMapping(value = "/vote_result.jspx", method = RequestMethod.GET)
 	public String result(Integer voteId, HttpServletRequest request,
@@ -47,7 +47,7 @@ public class VoteAct {
 		CmsVoteTopic vote = cmsVoteTopicMng.findById(voteId);
 		model.addAttribute("vote", vote);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, VOTE_RESULT);
 	}
 
@@ -58,7 +58,7 @@ public class VoteAct {
 		CmsVoteTopic vote = cmsVoteTopicMng.findById(voteId);
 		model.addAttribute("vote", vote);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, VOTE_INPUT);
 	}
 
@@ -95,7 +95,7 @@ public class VoteAct {
 					.getTitle());
 		}
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, VOTE_RESULT);
 	}
 

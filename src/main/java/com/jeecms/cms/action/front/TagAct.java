@@ -22,8 +22,8 @@ import com.jeecms.cms.web.FrontUtils;
 @Controller
 public class TagAct {
 
-	public static final String TAGS_INDEX = "tpl.tagIndex";
-	public static final String TAGS_DETAIL = "tpl.tagDetail";
+	public static final String TAGS_INDEX = "tagIndex";
+	public static final String TAGS_DETAIL = "tagDetail";
 
 	@RequestMapping(value = "/tag*.jspx", method = RequestMethod.GET)
 	public String index(HttpServletRequest request,
@@ -31,7 +31,7 @@ public class TagAct {
 		CmsSite site = CmsUtils.getSite(request);
 		FrontUtils.frontData(request, model, site);
 		FrontUtils.frontPageData(request, model);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, TAGS_INDEX);
 	}
 
@@ -64,7 +64,7 @@ public class TagAct {
 		model.addAttribute(FrontUtils.PAGE_NO, pageNo);
 		FrontUtils.frontData(request, model, site);
 		FrontUtils.frontPageData(request, model);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_SPECIAL, TAGS_DETAIL);
 	}
 

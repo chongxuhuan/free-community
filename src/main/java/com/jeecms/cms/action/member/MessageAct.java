@@ -48,15 +48,15 @@ import com.octo.captcha.service.image.ImageCaptchaService;
 public class MessageAct {
 	private static final Logger log = LoggerFactory.getLogger(MessageAct.class);
 
-	public static final String MESSAGE_IN_BOX_LIST = "tpl.messageInBoxLists";
-	public static final String MESSAGE_DRAFT_LIST = "tpl.messageDraftLists";
-	public static final String MESSAGE_SEND_LIST = "tpl.messageSendLists";
-	public static final String MESSAGE_TRASH_LIST = "tpl.messageTrashLists";
-	public static final String MESSAGE_MNG = "tpl.messageMng";
-	public static final String MESSAGE_ADD = "tpl.messageAdd";
-	public static final String MESSAGE_EDIT = "tpl.messageEdit";
-	public static final String MESSAGE_READ = "tpl.messageRead";
-	public static final String MESSAGE_REPLY = "tpl.messageReply";
+	public static final String MESSAGE_IN_BOX_LIST = "messageInBoxLists";
+	public static final String MESSAGE_DRAFT_LIST = "messageDraftLists";
+	public static final String MESSAGE_SEND_LIST = "messageSendLists";
+	public static final String MESSAGE_TRASH_LIST = "messageTrashLists";
+	public static final String MESSAGE_MNG = "messageMng";
+	public static final String MESSAGE_ADD = "messageAdd";
+	public static final String MESSAGE_EDIT = "messageEdit";
+	public static final String MESSAGE_READ = "messageRead";
+	public static final String MESSAGE_REPLY = "messageReply";
 
 	/**
 	 * 我的信息
@@ -89,7 +89,7 @@ public class MessageAct {
 			model.addAttribute("box", 0);
 		}
 		model.addAttribute("msg", msg);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MESSAGE, MESSAGE_MNG);
 	}
 
@@ -160,8 +160,7 @@ public class MessageAct {
 		model.addAttribute("sendEndTime", sendEndTime);
 		model.addAttribute("status", status);
 		model.addAttribute("box", box);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_MESSAGE, returnPage);
+		return FrontUtils.getTplPath(site.getSolutionPath(),TPLDIR_MESSAGE, returnPage);
 	}
 
 	@RequestMapping(value = "/member/message_add.jspx")
@@ -178,7 +177,7 @@ public class MessageAct {
 		if (user == null) {
 			return FrontUtils.showLogin(request, model, site);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MESSAGE, MESSAGE_ADD);
 	}
 
@@ -204,7 +203,7 @@ public class MessageAct {
 			return FrontUtils.showError(request, response, model, errors);
 		}
 		model.addAttribute("message", message);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MESSAGE, MESSAGE_REPLY);
 	}
 
@@ -347,7 +346,7 @@ public class MessageAct {
 			return FrontUtils.showError(request, response, model, errors);
 		}
 		model.addAttribute("message", message);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MESSAGE, MESSAGE_EDIT);
 	}
 
@@ -430,7 +429,7 @@ public class MessageAct {
 			model.addAttribute("message", msg);
 		}
 		model.addAttribute("box", box);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MESSAGE, MESSAGE_READ);
 	}
 
@@ -457,7 +456,7 @@ public class MessageAct {
 			message = messageMng.findById(id);
 			model.addAttribute("message", message);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MESSAGE, MESSAGE_ADD);
 	}
 

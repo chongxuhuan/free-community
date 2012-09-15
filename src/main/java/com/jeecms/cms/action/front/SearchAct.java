@@ -18,8 +18,8 @@ import com.jeecms.common.web.RequestUtils;
 
 @Controller
 public class SearchAct {
-	public static final String SEARCH_INPUT = "tpl.searchInput";
-	public static final String SEARCH_RESULT = "tpl.searchResult";
+	public static final String SEARCH_INPUT = "searchInput";
+	public static final String SEARCH_RESULT = "searchResult";
 
 	@RequestMapping(value = "/search*.jspx", method = RequestMethod.GET)
 	public String index(HttpServletRequest request,
@@ -34,10 +34,10 @@ public class SearchAct {
 		if (StringUtils.isBlank(q) && StringUtils.isBlank(channelId)) {
 			model.remove("q");
 			model.remove("channelId");
-			return FrontUtils.getTplPath(request, site.getSolutionPath(),
+			return FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_SPECIAL, SEARCH_INPUT);
 		} else {
-			return FrontUtils.getTplPath(request, site.getSolutionPath(),
+			return FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_SPECIAL, SEARCH_RESULT);
 		}
 	}

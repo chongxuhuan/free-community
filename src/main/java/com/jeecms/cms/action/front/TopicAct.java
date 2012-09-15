@@ -24,9 +24,9 @@ import com.jeecms.cms.web.FrontUtils;
 @Controller
 public class TopicAct {
 
-	public static final String TOPIC_INDEX = "tpl.topicIndex";
+	public static final String TOPIC_INDEX = "topicIndex";
 	public static final String TOPIC_CHANNEL = "tpl.topicChannel";
-	public static final String TOPIC_DEFAULT = "tpl.topicDefault";
+	public static final String TOPIC_DEFAULT = "topicDefault";
 
 	@RequestMapping(value = "/topic*.jspx", method = RequestMethod.GET)
 	public String index(Integer channelId, Integer topicId,
@@ -44,7 +44,7 @@ public class TopicAct {
 			model.addAttribute("topic", topic);
 			String tpl = topic.getTplContent();
 			if (StringUtils.isBlank(tpl)) {
-				tpl = FrontUtils.getTplPath(request, site.getSolutionPath(),
+				tpl = FrontUtils.getTplPath(site.getSolutionPath(),
 						TPLDIR_TOPIC, TOPIC_DEFAULT);
 			}
 			return tpl;
@@ -58,7 +58,7 @@ public class TopicAct {
 			return FrontUtils.getTplPath(request, site.getSolutionPath(),
 					TPLDIR_TOPIC, TOPIC_CHANNEL);
 		} else {
-			return FrontUtils.getTplPath(request, site.getSolutionPath(),
+			return FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_TOPIC, TOPIC_INDEX);
 		}
 	}
@@ -77,7 +77,7 @@ public class TopicAct {
 		model.addAttribute("topic", topic);
 		String tpl = topic.getTplContent();
 		if (StringUtils.isBlank(tpl)) {
-			tpl = FrontUtils.getTplPath(request, site.getSolutionPath(),
+			tpl = FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_TOPIC, TOPIC_DEFAULT);
 		}
 		FrontUtils.frontData(request, model, site);
