@@ -4,7 +4,6 @@ lib/
 .settings/
 .project
 .classpath
-target
-cache/application/
-cache/hibernate/
+target/
+cache/
 index.html
