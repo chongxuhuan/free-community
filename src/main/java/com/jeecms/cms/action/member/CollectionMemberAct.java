@@ -34,7 +34,7 @@ import com.jeecms.common.web.ResponseUtils;
 @Controller
 public class CollectionMemberAct {
 
-	public static final String COLLECTION_LIST = "tpl.collectionList";
+	public static final String COLLECTION_LIST = "collectionList";
 
 	/**
 	 * 我的收藏信息
@@ -70,7 +70,7 @@ public class CollectionMemberAct {
 		if (queryChannelId != null) {
 			model.addAttribute("queryChannelId", queryChannelId);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, COLLECTION_LIST);
 	}
 

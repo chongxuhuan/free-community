@@ -37,9 +37,9 @@ public class MemberAct {
 	private static final Logger log = LoggerFactory.getLogger(MemberAct.class);
 
 	public static final String MEMBER_CENTER = "tpl.memberCenter";
-	public static final String MEMBER_PROFILE = "tpl.memberProfile";
-	public static final String MEMBER_PORTRAIT = "tpl.memberPortrait";
-	public static final String MEMBER_PASSWORD = "tpl.memberPassword";
+	public static final String MEMBER_PROFILE = "memberProfile";
+	public static final String MEMBER_PORTRAIT = "memberPortrait";
+	public static final String MEMBER_PASSWORD = "memberPassword";
 
 	/**
 	 * 会员中心页
@@ -91,7 +91,7 @@ public class MemberAct {
 		if (user == null) {
 			return FrontUtils.showLogin(request, model, site);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, MEMBER_PROFILE);
 	}
 	/**
@@ -115,7 +115,7 @@ public class MemberAct {
 		if (user == null) {
 			return FrontUtils.showLogin(request, model, site);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, MEMBER_PORTRAIT);
 	}
 
@@ -171,7 +171,7 @@ public class MemberAct {
 		if (user == null) {
 			return FrontUtils.showLogin(request, model, site);
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, MEMBER_PASSWORD);
 	}
 

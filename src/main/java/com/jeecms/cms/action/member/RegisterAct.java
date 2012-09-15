@@ -47,9 +47,9 @@ public class RegisterAct {
 	private static final Logger log = LoggerFactory
 			.getLogger(RegisterAct.class);
 
-	public static final String REGISTER = "tpl.register";
-	public static final String REGISTER_RESULT = "tpl.registerResult";
-	public static final String REGISTER_ACTIVE_SUCCESS = "tpl.registerActiveSuccess";
+	public static final String REGISTER = "register";
+	public static final String REGISTER_RESULT = "registerResult";
+	public static final String REGISTER_ACTIVE_SUCCESS = "registerActiveSuccess";
 
 	@RequestMapping(value = "/register.jspx", method = RequestMethod.GET)
 	public String input(HttpServletRequest request,
@@ -67,7 +67,7 @@ public class RegisterAct {
 		}
 		FrontUtils.frontData(request, model, site);
 		model.addAttribute("mcfg", mcfg);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, REGISTER);
 	}
 
@@ -109,7 +109,7 @@ public class RegisterAct {
 			response.sendRedirect(nextUrl);
 			return null;
 		} else {
-			return FrontUtils.getTplPath(request, site.getSolutionPath(),
+			return FrontUtils.getTplPath(site.getSolutionPath(),
 					TPLDIR_MEMBER, REGISTER_RESULT);
 		}
 	}
@@ -126,7 +126,7 @@ public class RegisterAct {
 		String ip = RequestUtils.getIpAddr(request);
 		authMng.activeLogin(user, ip, request, response, session);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, REGISTER_ACTIVE_SUCCESS);
 	}
 

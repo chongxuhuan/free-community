@@ -33,15 +33,15 @@ content
 	新闻内容.html -->> newsComment.html
 	作品内容.html -->> worksComment.html
 csi
-	广告.html -->> advert.html
-	广告版位.html -->> advertPosition.html
-	会员登录.html -->> userLogin.html
+	广告.html -->> advertising.html
+	广告版位.html -->> adspace.html
+	会员登录.html -->> loginCsi.html
 	评论列表.html -->> commentList.html
 csi_custom
 	my_custom.html
 guestbook
-	查看留言回复.html -->> findMessageReply.html
-	留言详细.html -->> messageDetail.html
+	查看留言回复.html -->> guestBookReplay.html
+	留言详细.html -->> guestBookDetail.html
 	我的留言列表.html -->> myMessageList.html
 include
 	header-register.html
@@ -60,24 +60,24 @@ member
 	image_cuted.html
 	image_upload.html
 	登录状态页.html -->> loginStatus.html
-	会员登录页.html -->> userLogin.html
-	会员密码修改页.html -->> userPassowrdModify.html
-	会员头像修改页.html -->> userPhotoModify.html
-	会员信息修改页.html -->> userMessageModify.html
-	会员中心页_导航.html -->> userCenterNav.html   navigation(导航)
-	会员中心页_页顶.html -->> userCenterTop.html
-	会员中心页_页脚.html -->> userCenterFooter.html
-	会员中心页_页头.html -->> userCenterHeader.html
-	会员中心页.html -->> userCenter.html
-	会员注册页.html -->> userRegister.html
-	激活成功页.html -->> activeSuccess.html
+	会员登录页.html -->> loginInput.html
+	会员密码修改页.html -->> memberPassword.html
+	会员头像修改页.html -->> memberPortrait.html
+	会员信息修改页.html -->> memberProfile.html
+	会员中心页_导航.html -->> memberCenterNav.html   navigation(导航)
+	会员中心页_页顶.html -->> memberCenterTop.html
+	会员中心页_页脚.html -->> memberCenterFooter.html
+	会员中心页_页头.html -->> memberCenterHeader.html
+	会员中心页.html -->> memberCenter.html
+	会员注册页.html -->> register.html
+	激活成功页.html -->> registerActiveSuccess.html
 	密码重置页.html -->> passwordReset.html
-	收藏列表页.html -->> favoriteList.html
+	收藏列表页.html -->> collectionList.html
 	投稿列表页.html -->> contributeList.html
-	投稿输入页.html -->> contributeInput.html
-	投稿修改页.html -->> contributeModify.html
-	找回密码结果页.html -->> findPasswordResult.html
-	找回密码输入页.html -->> findPasswordInput.html
+	投稿输入页.html -->> contributeAdd.html
+	投稿修改页.html -->> contributeEdit.html
+	找回密码结果页.html -->> forgotPasswordResult.html
+	找回密码输入页.html -->> forgotPasswordInput.html
 	注册结果页.html -->> registerResult.html
 message
 	草稿箱.html -->> drafts.html
@@ -96,7 +96,7 @@ special
 	留言板类别页.html -->> messageBoardCategory.html
 	留言板首页.html -->> messageBoard.html
 	留言板详细页.html -->> messgatBoardDetail.html
-	评论页.html -->> comment.html
+	评论页.html -->> commentPage.html
 	搜索结果页.html -->> searchResult.html
 	搜索输入页.html -->> searchInput.html
 	投票结果页.html -->> voteResult.html

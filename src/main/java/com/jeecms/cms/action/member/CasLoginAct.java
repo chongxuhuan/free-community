@@ -46,8 +46,8 @@ public class CasLoginAct {
 			.getLogger(CasLoginAct.class);
 
 	public static final String COOKIE_ERROR_REMAINING = "_error_remaining";
-	public static final String LOGIN_INPUT = "tpl.loginInput";
-	public static final String LOGIN_STATUS = "tpl.loginStatus";
+	public static final String LOGIN_INPUT = "loginInput";
+	public static final String LOGIN_STATUS = "loginStatus";
 
 	@RequestMapping(value = "/login.jspx", method = RequestMethod.GET)
 	public String input(HttpServletRequest request, ModelMap model) {
@@ -68,7 +68,7 @@ public class CasLoginAct {
 				} else {
 					FrontUtils.frontData(request, model, site);
 					model.addAttribute("auth", auth);
-					return FrontUtils.getTplPath(request, sol, TPLDIR_MEMBER,
+					return FrontUtils.getTplPath(sol, TPLDIR_MEMBER,
 							LOGIN_STATUS);
 				}
 			}
@@ -83,7 +83,7 @@ public class CasLoginAct {
 		if (!StringUtils.isBlank(message)) {
 			model.addAttribute(MESSAGE, message);
 		}
-		return FrontUtils.getTplPath(request, sol, TPLDIR_MEMBER, LOGIN_INPUT);
+		return FrontUtils.getTplPath(sol, TPLDIR_MEMBER, LOGIN_INPUT);
 	}
 
 	@RequestMapping(value = "/login.jspx", method = RequestMethod.POST)
@@ -139,7 +139,7 @@ public class CasLoginAct {
 		if (!StringUtils.isBlank(message)) {
 			model.addAttribute(MESSAGE, message);
 		}
-		return FrontUtils.getTplPath(request, sol, TPLDIR_MEMBER, LOGIN_INPUT);
+		return FrontUtils.getTplPath(sol, TPLDIR_MEMBER, LOGIN_INPUT);
 	}
 
 	@RequestMapping(value = "/logout.jspx")

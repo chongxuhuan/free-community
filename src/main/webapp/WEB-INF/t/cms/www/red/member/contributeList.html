@@ -2,24 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>我的收藏- ${site.name}</title>
+<title>投稿列表 - ${site.name}</title>
 <link href="${resSys}/front.css" rel="stylesheet" type="text/css"/>
 <script src="${resSys}/jquery.js" type="text/javascript"></script>
 <script src="${resSys}/front.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="../../${res}/css/member.css" />
+<script type="text/javascript">
+$(function() {
+	$("#jvForm").validate();
+});
+</script>
 </head>
+
 <body>
-[#include "../member/会员中心页_页头.html"/]
+[#include "memberCenterHeader.html"/]
 <div class="container">
-	 [#include "../member/会员中心页_导航.html"/]
+	 [#include "memberCenterNav.html"/]
     <div class="mc_right">
-        [#include "../member/会员中心页_页顶.html"/]
+        [#include "memberCenterTop.html"/]
         <div class="mr-top-position">
-		     <div class="mr-top-tit fl">我的收藏</div>
-		    <div class="modify fr"><a href="${base}/member/collection_list.jspx">我的收藏</a></div>
+		     <div class="mr-top-tit fl">稿件列表</div>
+		    <div class="modify fr"><a href="${base}/member/contribute_add.jspx">发布稿件</a></div>
 		 </div>
         <div class="mc_content">   
-          	<form id="tableForm" action="collection_list.jspx" method="post">
+           	<form id="tableForm" action="contribute_list.jspx" method="post">
             [#if pagination.list?size gt 0]
             <table border="0" cellpadding="0" cellspacing="1" bgcolor="#C8DCF0" class="tblist">
             <tr>
@@ -32,14 +38,14 @@
                 <th>操作</th>
             </tr>
             [#list pagination.list as c]
-            <tr id="tr_${c.id}">	
+            <tr>	
                 <td bgcolor="#FFFFFF">${c.id}</td>
                 <td bgcolor="#FFFFFF"><a href="${c.url!}">${c.title?html}</a></td>
                 <td bgcolor="#FFFFFF">${c.channel.name}</td>
                 <td bgcolor="#FFFFFF">[#if c.checked]审核通过[#elseif c.checkStep==0]未审核[#else]审核中[/#if]</td>
                 <td bgcolor="#FFFFFF">${c.views}</td>
                 <td bgcolor="#FFFFFF">${c.releaseDate?string('yyyy-MM-dd')}</td>
-                <td bgcolor="#FFFFFF"><span onclick="Cms.cmsCollect('${base}','${c.id}',0)" id="cancelSpan"  style="cursor: pointer;">取消收藏</span></td>
+                <td bgcolor="#FFFFFF">[#if c.checkStep==0]<a href="contribute_edit.jspx?id=${c.id}&nextUrl=contribute_list.jspx">修改<a> | <a href="contribute_delete.jspx?ids=${c.id}&nextUrl=contribute_list.jspx">删除<a>[#else]修改 | 删除[/#if]</td>
             </tr>
             [/#list]
             </table>
@@ -61,7 +67,7 @@
                 try{
                     var tableForm = document.getElementById("tableForm");
                     $("input[name=pageNo]").val(pageNo);
-                    tableForm.action="collection_list.jspx";
+                    tableForm.action="contribute_list.jspx";
                     tableForm.onsubmit=null;
                     tableForm.submit();
                 } catch(e) {
@@ -70,7 +76,7 @@
             }
             </script>
             [#else]
-                <div>暂无收藏</div>
+                <div>暂无投稿</div>
             [/#if]
             </form>
     	</div>

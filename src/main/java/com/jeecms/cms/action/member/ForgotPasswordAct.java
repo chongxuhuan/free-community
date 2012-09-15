@@ -42,9 +42,9 @@ public class ForgotPasswordAct {
 	private static Logger log = LoggerFactory
 			.getLogger(ForgotPasswordAct.class);
 
-	public static final String FORGOT_PASSWORD_INPUT = "tpl.forgotPasswordInput";
-	public static final String FORGOT_PASSWORD_RESULT = "tpl.forgotPasswordResult";
-	public static final String PASSWORD_RESET = "tpl.passwordReset";
+	public static final String FORGOT_PASSWORD_INPUT = "forgotPasswordInput";
+	public static final String FORGOT_PASSWORD_RESULT = "forgotPasswordResult";
+	public static final String PASSWORD_RESET = "passwordReset";
 
 	/**
 	 * 找回密码输入页
@@ -59,7 +59,7 @@ public class ForgotPasswordAct {
 			HttpServletResponse response, ModelMap model) {
 		CmsSite site = CmsUtils.getSite(request);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, FORGOT_PASSWORD_INPUT);
 	}
 
@@ -114,7 +114,7 @@ public class ForgotPasswordAct {
 				log.error("send email exception.", e);
 			}
 		}
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, FORGOT_PASSWORD_RESULT);
 	}
 
@@ -142,7 +142,7 @@ public class ForgotPasswordAct {
 			model.addAttribute("status", 0);
 		}
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, PASSWORD_RESET);
 	}
 

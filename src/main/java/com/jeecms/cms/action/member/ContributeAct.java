@@ -48,9 +48,9 @@ public class ContributeAct {
 	private static final Logger log = LoggerFactory
 			.getLogger(ContributeAct.class);
 
-	public static final String CONTRIBUTE_LIST = "tpl.contributeList";
-	public static final String CONTRIBUTE_ADD = "tpl.contributeAdd";
-	public static final String CONTRIBUTE_EDIT = "tpl.contributeEdit";
+	public static final String CONTRIBUTE_LIST = "contributeList";
+	public static final String CONTRIBUTE_ADD = "contributeAdd";
+	public static final String CONTRIBUTE_EDIT = "contributeEdit";
 
 	/**
 	 * 会员投稿列表
@@ -118,7 +118,7 @@ public class ContributeAct {
 		List<Channel> channelList = Channel.getListForSelect(topList, rights,
 				true);
 		model.addAttribute("channelList", channelList);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, CONTRIBUTE_ADD);
 	}
 
@@ -224,7 +224,7 @@ public class ContributeAct {
 				true);
 		model.addAttribute("content", content);
 		model.addAttribute("channelList", channelList);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_MEMBER, CONTRIBUTE_EDIT);
 	}
 
