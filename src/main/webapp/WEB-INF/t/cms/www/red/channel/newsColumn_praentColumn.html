@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${channel.title!channel.name} - ${site.name} - Powered by JEECMS</title>
+<title>${channel.title!channel.name} - ${site.name}</title>
 <meta http-equiv="keywords" content="${channel.keywords!}"/>
 <meta http-equiv="description" content="${channel.description!}"/>
 <link href="${resSys}/front.css" rel="stylesheet" type="text/css"/>
@@ -19,16 +19,16 @@ $(function() {
 
 <body>
 <!--top_begin-->
-[#include "../include/页头顶栏.html"/]
-[#include "../include/页头顶栏.html"/]
+[#include "../include/top.html"/]
+[#include "../include/top.html"/]
 <!--top_end-->
 
 <!--header_begin-->
-[#include "../include/页头导航栏.html"/]
+[#include "../include/headerNav.html"/]
 <!--header_end-->
 
 <!--search_begin-->
-[#include "../include/页头搜索栏.html"/]
+[#include "../include/headSearch.html"/]
 <!--search_end-->
 
 <!--body_begin-->
@@ -103,11 +103,11 @@ $(function() {
 <!--body_end-->
 
 <!--hotlink_begin-->
-[#include "../include/页脚友情链接栏.html"/]
+[#include "../include/footerLinks.html"/]
 <!--hotlink_end-->
 
 <!--footer_begin-->
-[#include "../include/页脚信息栏.html"/]
+[#include "../include/footer.html"/]
 <!--footer_end-->
 </body>
 </html>

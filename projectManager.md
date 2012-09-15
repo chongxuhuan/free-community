@@ -8,11 +8,11 @@ channel
 	图库栏目.html -->> photoColumn.html
 	图库栏目_子栏目.html -->> photoColumn_childColumn.html
 	下载栏目.html -->> downloadColumn.html
-	下载栏目_子栏目.html -->> downloadColumn_childColumn.html
+	下载栏目_二级.html -->> downloadColumn_secondColumn.html
 	新闻栏目.html -->> newsColumn.html
 	新闻栏目_父级.html -->> newsColumn_praentColumn.html
 	新闻栏目_子栏目.html -->> newsColumn_childColumn.html
-	作品栏目.html -->> worksColumn.html
+	作品栏目.html -->> 	worksColumn.html
 	作品栏目_子栏目.html -->> worksColumn_childColumn.html
 comment
 	查看评论回复.html -->> findCommentReply.html
@@ -49,7 +49,7 @@ include
 	投票栏.html -->> voteColumn.html
 	页脚信息栏.html -->> footer.html
 	页脚友情链接栏.html -->> footerLinks.html
-	页头导航栏.html -->> header.html
+	页头导航栏.html -->> headerNav.html
 	页头顶栏.html -->> top.html
 	页头搜索栏.html -->> headSearch.html
 index
@@ -113,12 +113,29 @@ tag
 topic
 	专题导航页.html -->> subjectNav.html
 	专题默认页.html -->> subjectDefault.html
-
-
-
-
-
-
+###############################################################################################################################################################
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+content
+update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/newsContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/新闻内容.html';
+update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/worksContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/作品内容.html';
+update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/downloadContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/下载内容.html';
+update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/photoContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/图库内容.html';
+update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/videoContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/视频内容.html';
+update jc_channel_ext set tpl_content = '/WEB-INF/t/cms/www/red/content/productContent.html' where tpl_content = '/WEB-INF/t/cms/www/red/content/产品内容.html';
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+channel
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/productColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/产品栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/videoColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/视频栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/videoColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/视频栏目_子栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/photoColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/图库栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/photoColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/图库栏目_子栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/downloadColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/下载栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/downloadColumn_secondColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/下载栏目_二级.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/newsColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/新闻栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/newsColumn_praentColumn.html.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/新闻栏目_父级.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/newsColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/新闻栏目_子栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/worksColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/作品栏目.html';
+update jc_channel_ext set tpl_channel = '/WEB-INF/t/cms/www/red/channel/worksColumn_childColumn.html' where tpl_channel = '/WEB-INF/t/cms/www/red/channel/作品栏目_子栏目.html';
 
 
 

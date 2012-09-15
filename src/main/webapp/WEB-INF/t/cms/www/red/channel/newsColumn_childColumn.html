@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${channel.title!channel.name} - ${site.name} - Powered by JEECMS</title>
+<title>${channel.title!channel.name} - ${site.name}</title>
 <meta http-equiv="keywords" content="${channel.keywords!}"/>
 <meta http-equiv="description" content="${channel.description!}"/>
 <link href="${resSys}/front.css" rel="stylesheet" type="text/css"/>
@@ -18,8 +18,8 @@ $(function() {
 </head>
 
 <body>
-[#include "../include/页头顶栏.html"/]
-[#include "../include/页头导航栏.html"/]
+[#include "../include/top.html"/]
+[#include "../include/headerNav.html"/]
 <div id="main">
 <div class="page2 position1"> 您现在正在浏览： <a href="${base}/">首页</a> &raquo; [#list channel.nodeList as n]<a href="${n.url}" target="_blank">${n.name}</a>[#if n_has_next] &raquo; [/#if][/#list]</div>
 
@@ -82,8 +82,8 @@ $(function() {
 <!--cjbd_end-->
 </div>
 <div id="wrapper">
-[#include "../include/页脚友情链接栏.html"/]
-[#include "../include/页脚信息栏.html"/]
+[#include "../include/footerLinks.html"/]
+[#include "../include/footer.html"/]
 </div>
 </body>
 </html>
