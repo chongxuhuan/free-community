@@ -48,19 +48,19 @@ public class FrontUtils {
 	/**
 	 * 页面没有找到
 	 */
-	public static final String PAGE_NOT_FOUND = "tpl.pageNotFound";
+	public static final String PAGE_NOT_FOUND = "pageNotFound";
 	/**
 	 * 操作成功页面
 	 */
-	public static final String SUCCESS_PAGE = "tpl.successPage";
+	public static final String SUCCESS_PAGE = "successRemindPage";
 	/**
 	 * 操作失败页面
 	 */
-	public static final String ERROR_PAGE = "tpl.errorPage";
+	public static final String ERROR_PAGE = "errorRemindPage";
 	/**
 	 * 信息提示页面
 	 */
-	public static final String MESSAGE_PAGE = "tpl.messagePage";
+	public static final String MESSAGE_PAGE = "messageRemindPage";
 	/**
 	 * 系统资源路径
 	 */
@@ -206,8 +206,8 @@ public class FrontUtils {
 		response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		CmsSite site = CmsUtils.getSite(request);
 		frontData(request, model, site);
-		return getTplPath(request, site.getSolutionPath(), TPLDIR_COMMON,
-				PAGE_NOT_FOUND);
+		return getTplPath(site.getSolutionPath(), TPLDIR_COMMON,PAGE_NOT_FOUND);
+		
 	}
 
 	/**
@@ -224,8 +224,7 @@ public class FrontUtils {
 		if (!StringUtils.isBlank(nextUrl)) {
 			model.put("nextUrl", nextUrl);
 		}
-		return getTplPath(request, site.getSolutionPath(), TPLDIR_COMMON,
-				SUCCESS_PAGE);
+		return getTplPath(site.getSolutionPath(), TPLDIR_COMMON, SUCCESS_PAGE);
 	}
 
 	/**
@@ -242,8 +241,7 @@ public class FrontUtils {
 		CmsSite site = CmsUtils.getSite(request);
 		frontData(request, model, site);
 		errors.toModel(model);
-		return getTplPath(request, site.getSolutionPath(), TPLDIR_COMMON,
-				ERROR_PAGE);
+		return getTplPath(site.getSolutionPath(), TPLDIR_COMMON,ERROR_PAGE);
 	}
 
 	/**
@@ -263,8 +261,7 @@ public class FrontUtils {
 		if (args != null) {
 			model.put(ARGS, args);
 		}
-		return getTplPath(request, site.getSolutionPath(), TPLDIR_COMMON,
-				MESSAGE_PAGE);
+		return getTplPath(site.getSolutionPath(), TPLDIR_COMMON,MESSAGE_PAGE);
 	}
 
 	/**
