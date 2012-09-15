@@ -5,5 +5,6 @@ lib/
 .project
 .classpath
 target
-*.data
+cache/application/
+cache/hibernate/
 index.html
