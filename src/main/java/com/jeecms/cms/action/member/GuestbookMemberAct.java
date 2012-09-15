@@ -31,9 +31,9 @@ import com.jeecms.common.web.CookieUtils;
 @Controller
 public class GuestbookMemberAct {
 
-	public static final String GUESTBOOK_LIST = "tpl.guestBookLists";
-	public static final String GUESTBOOK_DETAIL = "tpl.guestBookDetail";
-	public static final String GUESTBOOK_REPLAY = "tpl.guestBookReplay";
+	public static final String GUESTBOOK_LIST = "guestBookLists";
+	public static final String GUESTBOOK_DETAIL = "guestBookDetail";
+	public static final String GUESTBOOK_REPLAY = "guestBookReplay";
 
 	/**
 	 * 我的留言
@@ -64,7 +64,7 @@ public class GuestbookMemberAct {
 				.getId(), null, null, true, false, cpn(pageNo), CookieUtils
 				.getPageSize(request));
 		model.addAttribute("pagination", pagination);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_GUESTBOOK, GUESTBOOK_LIST);
 	}
 
@@ -88,7 +88,7 @@ public class GuestbookMemberAct {
 		}
 		CmsGuestbook guestbook = guestbookMng.findById(id);
 		model.addAttribute("guestbook", guestbook);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_GUESTBOOK, GUESTBOOK_DETAIL);
 	}
 
@@ -116,8 +116,7 @@ public class GuestbookMemberAct {
 			return FrontUtils.showError(request, response, model, errors);
 		}
 		model.addAttribute("guestbook", guestbook);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_GUESTBOOK, GUESTBOOK_REPLAY);
+		return FrontUtils.getTplPath(site.getSolutionPath(),TPLDIR_GUESTBOOK, GUESTBOOK_REPLAY);
 	}
 
 	@Autowired
