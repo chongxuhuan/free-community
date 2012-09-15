@@ -38,7 +38,7 @@ public class DynamicPageAct {
 	/**
 	 * 首页模板名称
 	 */
-	public static final String TPL_INDEX = "tpl.index";
+	public static final String TPL_INDEX = "index";
 	public static final String GROUP_FORBIDDEN = "login.groupAccessForbidden";
 
 	/**
@@ -52,7 +52,7 @@ public class DynamicPageAct {
 	public String index(HttpServletRequest request, ModelMap model) {
 		CmsSite site = CmsUtils.getSite(request);
 		FrontUtils.frontData(request, model, site);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
+		return FrontUtils.getTplPath(site.getSolutionPath(),
 				TPLDIR_INDEX, TPL_INDEX);
 	}
 
