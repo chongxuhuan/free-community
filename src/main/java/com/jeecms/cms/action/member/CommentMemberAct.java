@@ -37,9 +37,9 @@ public class CommentMemberAct {
 	private static final Logger log = LoggerFactory
 			.getLogger(CommentMemberAct.class);
 
-	public static final String COMMENT_LIST = "tpl.commentLists";
-	public static final String COMMENT_MNG = "tpl.commentMng";
-	public static final String COMMENT_REPLY = "tpl.commentReply";
+	public static final String COMMENT_LIST = "myCommentList";
+	public static final String COMMENT_MNG = "commentManager";
+	public static final String COMMENT_REPLY = "findCommentReply";
 
 	/**
 	 * 我的评论
@@ -69,8 +69,7 @@ public class CommentMemberAct {
 				user.getId(), null, null, null, null, true, cpn(pageNo),
 				CookieUtils.getPageSize(request));
 		model.addAttribute("pagination", pagination);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_COMMENT, COMMENT_LIST);
+		return FrontUtils.getTplPath(site.getSolutionPath(), TPLDIR_COMMENT, COMMENT_LIST);
 	}
 	/**
 	 * 查看评论回复
@@ -96,12 +95,11 @@ public class CommentMemberAct {
 			return FrontUtils.showError(request, response, model, errors);
 		}
 		model.addAttribute("comment", comment);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_COMMENT, COMMENT_REPLY);
+		return FrontUtils.getTplPath(site.getSolutionPath(), TPLDIR_COMMENT, COMMENT_REPLY);
 	}
 
 	/**
-	 * 我的信息所有的评论
+	 * 我的信息所有的评论(评论管理)
 	 * 
 	 * 如果没有登录则跳转到登陆页
 	 * 
@@ -128,8 +126,7 @@ public class CommentMemberAct {
 				null, user.getId(), null, null, null, true, cpn(pageNo),
 				CookieUtils.getPageSize(request));
 		model.addAttribute("pagination", pagination);
-		return FrontUtils.getTplPath(request, site.getSolutionPath(),
-				TPLDIR_COMMENT, COMMENT_MNG);
+		return FrontUtils.getTplPath(site.getSolutionPath(), TPLDIR_COMMENT, COMMENT_MNG);
 	}
 
 	/**
