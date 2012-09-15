@@ -19,10 +19,10 @@ comment
 	评论管理.html -->> commentManager.html	
 	我的评论列表.html -->> myCommentList.html
 common
-	成功提示页面.html -->> successRemind.html
-	错误提示页面.html -->> errorRemind.html
-	信息提示页面.html -->> messageRemind.html
-	页面没有找到.html -->> pageNotFind.html
+	成功提示页面.html -->> successRemindPage.html
+	错误提示页面.html -->> errorRemindPage.html
+	信息提示页面.html -->> messageRemindPage.html
+	页面没有找到.html -->> pageNotFound.html
 content
 	inc_comment_input.html
 	inc_comment_list.html
