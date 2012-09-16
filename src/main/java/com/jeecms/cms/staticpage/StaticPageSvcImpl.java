@@ -148,8 +148,7 @@ public class StaticPageSvcImpl implements StaticPageSvc, InitializingBean {
 	public void index(CmsSite site) throws IOException, TemplateException {
 		Map<String, Object> data = new HashMap<String, Object>();
 		FrontUtils.frontData(data, site, null, site.getUrlStatic(), null);
-		String tpl = FrontUtils.getTplPath(tplMessageSource, site
-				.getLocaleAdmin(), site.getSolutionPath(), TPLDIR_INDEX,
+		String tpl = FrontUtils.getTplPath(site.getSolutionPath(), TPLDIR_INDEX,
 				TPL_INDEX);
 		index(site, tpl, data);
 	}
