@@ -1,0 +1,9 @@
+规则:
+[@cms_content_list typeId='3' styleList='3-1' titLen='20' count='5' flashWidth='367' flashHeight='246' textHeight='20' channelOption='1' tpl='2' channelId='13'/] 
+
+
+内容的标签   
+typeId='3'  -->>  焦点文章
+styleList='3-1' 用那种样式显示
+titLen='20' 标题截取 20 个字
+count='5' 向数据中取5条数据

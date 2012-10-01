@@ -59,14 +59,18 @@ Copyright: JEECMS
 /* main
 ----------------------------------------*/
 #main{margin-top:5px; overflow:hidden;}
+.w980{width:980px;}
 .w700{width:700px;}
 .w720{width:720px;}
 .w300{width:300px;}
+.w260{width:260px;}
+.w265{width:265px;}
 .w340{width:330px;}
 .w355{width:355px;}
 .w400{width:394px;}
 .w410{width:420px!important; width:410px;}
 .w450{width:450px;}
+.w470{width:470px;}
 .w250{width:250px;}
 .w96{width:96%; margin:0 auto;}
 .w98{width:98%; margin:0 auto;}
